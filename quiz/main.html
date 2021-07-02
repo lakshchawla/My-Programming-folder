@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        background-color: lightblue;
+    }
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        border: 2px solid black;
+        border-radius: 20px;
+        width: 50%;
+    }
+
+    form {
+        align-items: center;
+        text-align: center;
+    }
+
+    .header {
+        text-align: center;
+    }
+
+    #button {
+        background-color: navy;
+        color: white;
+        padding: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        border-radius: 10px;
+        display: block;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h2 class="header">Quiz</h2>
+        <form>
+            <p id="ques">Error 404</p>
+
+            <input type="radio" name="like" id="r_button" value="Tea">
+            <label id="option1">_</label>
+
+            <input type="radio" name="like" id="r_button" value="Coffee">
+            <label id="option2">_</label>
+
+            <button type="button" onclick="getans()" id="button">SEE ANS</button>
+        </form>
+
+        <div id="ans"></div>
+    </div>
+
+    <script>
+        function getans() {
+            var ans = document.getElementsByName('like');
+
+            for (let i = 0; i < ans.length; i++) {
+                if (ans[i].checked) {
+                    document.getElementById("ans").innerHTML = "You like " + ans[i].value;
+                    break;
+                }
+            }
+        }
+        // var obj = JSON.parse('{ "cAns":"ans[i].value"}');
+
+        var myObj = {
+            "question": [
+                { "ques": "Which drink do you like?", "choice1": ["Tea"], "choice2": ["Coffee"] },
+
+                { "ques": "Which season do you like?", "choice1": ["Tea"], "choice2": ["Coffee"] }
+            ]
+        }
+
+        let i = 0;
+
+            document.getElementById("ques").innerHTML = myObj.question[0].ques;
+            document.getElementById("option1").innerHTML = myObj.question[0].choice1;
+            document.getElementById("option2").innerHTML = myObj.question[0].choice2;
+    </script>
+</body>
+
+</html>

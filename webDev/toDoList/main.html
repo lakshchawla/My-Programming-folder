@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="__Header">
+        <h1 class="__DateHeading">
+            <%= kindOfDay %>
+        </h1>
+    </div>
+
+    <div class="__MyListDiv">
+        <ul>
+            <li class="__ListItem">1 item</li>
+            <li class="__ListItem">2 item</li>
+            <li class="__ListItem">3 item</li>
+            <li class="__ListItem">4 item</li>
+            <li class="__ListItem">5 item</li>
+            <form action="/" method="post">
+                <input type="text" name="__AddItem" id="__AddItemBox">
+                <button type="submit" id="__SubmitBtn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+              </svg></button>
+            </form>
+        </ul>
+    </div>
+</body>
+
+</html>
